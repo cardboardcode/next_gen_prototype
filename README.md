@@ -98,3 +98,11 @@ ros2 launch rmf_path_server_demo demo.launch.py
 2. Click **Add Robot** to drop active participants onto the canvas.
 3. Select a robot and click a cell to place its goal.
 4. Click **Send Scenario** to observe multi-agent trajectory generation and live execution progress.
+
+## Other Demonstrations
+
+> [!NOTE]
+> Access the [RMF Path Server Demo](https://github.com/open-rmf/next_gen_prototype/blob/epic/next-gen-base/path_server/rmf_path_server_demo/README.md).
+
+> [!NOTE]
+> Access the [Nav2 Integration Demo](https://github.com/open-rmf/next_gen_prototype/blob/epic/next-gen-base/nav2_integration/README.md).
