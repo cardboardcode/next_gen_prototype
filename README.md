@@ -106,3 +106,6 @@ ros2 launch rmf_path_server_demo demo.launch.py
 
 > [!NOTE]
 > Access the [Nav2 Integration Demo](https://github.com/open-rmf/next_gen_prototype/blob/epic/next-gen-base/nav2_integration/README.md).
+
+> [!NOTE]
+> Access teh [Replan Obstacle Demo](https://github.com/open-rmf/next_gen_prototype/pull/36#issuecomment-5110030499)
