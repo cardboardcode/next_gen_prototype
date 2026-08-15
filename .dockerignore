@@ -1,0 +1,6 @@
+docker/Dockerfile.*
+scripts/*
+.gitignore
+LICENSE
+*.md
+*.bash
