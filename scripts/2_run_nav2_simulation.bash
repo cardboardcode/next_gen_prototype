@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 docker container stop next_gen_prototype_c
 docker container rm next_gen_prototype_c
 
