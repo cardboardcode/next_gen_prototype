@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-CONTAINER_NAME="next_gen_prototype_c"
-IMAGE_NAME="next_gen_prototype:jazzy_nav2"
+CONTAINER_NAME="ros2_rust_nav2_tb4_sim_c"
+IMAGE_NAME="ros2_rust_nav2_tb4_sim:jazzy"
 
 # 1. Stop and remove the container only if it already exists
 if [ "$(docker ps -aq -f name="^${CONTAINER_NAME}$")" ]; then

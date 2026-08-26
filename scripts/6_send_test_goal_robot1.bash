@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker exec -it next_gen_prototype_c bash -c "source /nav2_traffic_ws/install/setup.bash && \
+docker exec -it ros2_rust_nav2_tb4_sim_c bash -c "source /nav2_traffic_ws/install/setup.bash && \
     ros2 action send_goal robot1/navigate_to_pose nav2_msgs/action/NavigateToPose \"{
       pose: {
         header: {
