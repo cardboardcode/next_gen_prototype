@@ -20,8 +20,8 @@ docker run -it --rm \
     --env="DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v ./scripts/demo_nav2.launch.py:/nav2_traffic_ws/install/rmf_path_server_demo/share/rmf_path_server_demo/launch/demo_nav2.launch.py \
     --device=/dev/dri \
     "${IMAGE_NAME}" bash -c "
         source /nav2_traffic_ws/install/setup.bash && \
-        ros2 launch rmf_path_server_demo demo_nav2.launch.py robots:='robot0 robot1'
-    "
+        ros2 launch rmf_path_server_demo demo_nav2.launch.py"
