@@ -39,7 +39,7 @@ COPY . /tmp/next_gen_prototype
 
 # Install ROS 2 dependencies via rosdep for both underlay and prototype branch
 RUN apt-get update && \
-    apt-get install ros-jazzy-rmw-cyclonedds-cpp -y --no-install-recommends && \
+    apt-get install ros-jazzy-rmw-cyclonedds-cpp ros-jazzy-rmw-zenoh-cpp -y --no-install-recommends && \
     rosdep init || true && \
     rosdep update && \
     rosdep install --from-paths /tmp/next_gen_prototype --ignore-src -yr --skip-keys="rclrs ament_cargo ament_python" && \
