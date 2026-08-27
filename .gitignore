@@ -1,3 +1,4 @@
+scripts/assets/gcache
 path_server/rmf_path_server_test/trajectories/
 path_server/rmf_plan_executor/src/lib.rs
 next_gen_prototype/
