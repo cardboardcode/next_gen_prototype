@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-CONTAINER_NAME="ros2_rust_nav2_tb4_sim_c"
+CONTAINER_NAME="ros2_rust_base_c"
 
 docker logs $CONTAINER_NAME --tail 1000 -f
 
