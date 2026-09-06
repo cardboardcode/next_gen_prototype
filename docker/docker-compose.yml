@@ -11,14 +11,17 @@ services:
 
     container_name: robot0_nav2_sim
     restart: no
-    network_mode: host
+
+    networks:
+      - ros2_net
 
     environment:
-      RMW_IMPLEMENTATION: rmw_cyclonedds_cpp
+      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
       DISPLAY: ${DISPLAY:-}
       WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
       XDG_RUNTIME_DIR: ${XDG_RUNTIME_DIR:-/tmp/runtime-root}
       QT_X11_NO_MITSHM: "1"
+      GZ_PARTITION: sim
 
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
@@ -40,14 +43,17 @@ services:
 
     container_name: robot1_nav2_sim
     restart: no
-    network_mode: host
+
+    networks:
+      - ros2_net
 
     environment:
-      RMW_IMPLEMENTATION: rmw_cyclonedds_cpp
+      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
       DISPLAY: ${DISPLAY:-}
       WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
       XDG_RUNTIME_DIR: ${XDG_RUNTIME_DIR:-/tmp/runtime-root}
       QT_X11_NO_MITSHM: "1"
+      GZ_PARTITION: sim
 
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
@@ -62,6 +68,7 @@ services:
         cloned_multi_tb3_simulation_launch.py
         robots:='robot1={x: 3.0, y: 5.0, yaw: 0.0};'
         use_rviz:=True
+        use_simulator:=False
 
 
   next_gen_prototype:
@@ -69,10 +76,12 @@ services:
 
     container_name: next_gen_prototype
     restart: no
-    network_mode: host
 
-    environment:
-      RMW_IMPLEMENTATION: rmw_cyclonedds_cpp
+    networks:
+      - ros2_net
+
+    # environment:
+      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
 
     command:
       - bash
@@ -82,3 +91,8 @@ services:
         ros2 launch rmf_path_server_demo
         demo_nav2.launch.py
         robots:='robot0 robot1'
+
+
+networks:
+  ros2_net:
+    driver: bridge
