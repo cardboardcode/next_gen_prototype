@@ -16,7 +16,6 @@ services:
       - ros2_net
 
     environment:
-      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
       GZ_PARTITION: sim
 
     command:
@@ -38,7 +37,6 @@ services:
       - ros2_net
 
     environment:
-      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
       DISPLAY: ${DISPLAY:-}
       WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
       XDG_RUNTIME_DIR: ${XDG_RUNTIME_DIR:-/tmp/runtime-root}
@@ -71,7 +69,6 @@ services:
       - ros2_net
 
     environment:
-      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
       DISPLAY: ${DISPLAY:-}
       WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
       XDG_RUNTIME_DIR: ${XDG_RUNTIME_DIR:-/tmp/runtime-root}
@@ -102,9 +99,6 @@ services:
 
     networks:
       - ros2_net
-
-    # environment:
-      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
 
     command:
       - bash
