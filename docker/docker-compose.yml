@@ -6,6 +6,28 @@ x-ros2-base: &ros2-base
 
 services:
 
+  gazebo_server:
+    <<: *ros2-base
+
+    container_name: gazebo_server
+    restart: no
+
+    networks:
+      - ros2_net
+
+    environment:
+      # RMW_IMPLEMENTATION: rmw_zenoh_cpp
+      GZ_PARTITION: sim
+
+    command:
+      - bash
+      - -c
+      - >
+        source /nav2_traffic_ws/install/setup.bash &&
+        ros2 launch sp_demo_nav2_bringup
+        cloned_multi_tb3_simulation_launch.py
+        use_simulator:=True
+
   robot0_nav2_sim:
     <<: *ros2-base
 
@@ -36,6 +58,7 @@ services:
         cloned_multi_tb3_simulation_launch.py
         robots:='robot0={x: 0.0, y: 5.0, yaw: 0.0};'
         use_rviz:=True
+        use_simulator:=False
 
 
   robot1_nav2_sim:
