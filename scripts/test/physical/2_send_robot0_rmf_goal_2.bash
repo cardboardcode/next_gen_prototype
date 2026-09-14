@@ -7,10 +7,9 @@ docker exec ros2_rust_nav2_tb4_sim_c bash -c "source /opt/ros/jazzy/setup.bash &
           frame_id: 'map'
         },
         pose: {
-          position: {x: -0.8303335905075073, y: -0.004104167688637972, z: 0.0},
-          orientation: {x: 0.0, y: 0.0, z: -0.9999859542559891, w: 0.005300121766432868}
+          position: {x: -0.5801073908805847,y: 0.25394144654273987,z: 0.0},
+          orientation: {x: 0.0,y: 0.0,z: 0.01369471467804565,w: 0.9999062229978803}
         }
       }
     }\"
 "
-
