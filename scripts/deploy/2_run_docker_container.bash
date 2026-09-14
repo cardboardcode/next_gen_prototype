@@ -19,4 +19,5 @@ docker run -it --rm \
     --env RMW_IMPLEMENTATION=rmw_cyclonedds_cpp \
     "${IMAGE_NAME}" bash -c "
         source /nav2_traffic_ws/install/setup.bash && \
-        ros2 launch rmf_path_server_demo demo_nav2.launch.py"
+        ros2 launch rmf_path_server_demo demo_nav2.launch.py
+        robots:=\"robot0 robot1\""

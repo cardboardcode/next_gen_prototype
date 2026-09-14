@@ -34,4 +34,3 @@ ros2 launch rmf_path_server_demo demo_map.launch.py planner:=ccbs map:=demo_grid
 # Using custom map file
 ros2 launch rmf_path_server_demo demo_map.launch.py planner:=ccbs map_file:=/path/to/map.yaml
 ```
-
