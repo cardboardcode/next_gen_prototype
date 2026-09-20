@@ -1,3 +1,13 @@
+# Base image for next_gen_prototype docker compose
+# Purpose: reproducible ROS 2 Jazzy + Rust dev/test with prebuilt underlay workspace
+# Components built in underlay /nav2_traffic_ws:
+#   sp_demo_nav2_bringup, rmf_nav2_traffic, rmf_path_server_demo,
+#   rmf_path_server_test
+# Used by docker/docker-compose.yml services: gazebo_server, robot0_nav2_sim,
+# robot1_nav2_sim, next_gen_prototype
+# Overrides:
+#   docker-compose.headless.override.yml → no RViz
+#   docker-compose.zenoh.override.yml → RMW Zenoh
 FROM ros:jazzy-ros-base
 
 # Disable interactive prompts during package installation
