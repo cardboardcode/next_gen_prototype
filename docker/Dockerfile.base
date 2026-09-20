@@ -60,12 +60,9 @@ RUN mkdir src && mv /tmp/next_gen_prototype /nav2_traffic_ws/src/next_gen_protot
 RUN ls /nav2_traffic_ws/src/next_gen_prototype
 RUN /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash && \
     colcon build \
-      --packages-up-to \
-      sp_demo_nav2_bringup \
-      rmf_nav2_traffic \
-      rmf_path_server_demo \
-      rmf_path_server_test \
-      --cmake-args -DCMAKE_BUILD_TYPE=Release"
+      --cmake-args -DCMAKE_BUILD_TYPE=Release \
+       -DCMAKE_CXX_FLAGS=\"-w\" \
+       -DCMAKE_C_FLAGS=\"-w\""
 RUN rm -rf build/ log/ src/
 
 # Provide automatic sourcing entrypoint configuration inside ~/.bashrc
