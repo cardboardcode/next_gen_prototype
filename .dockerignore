@@ -1,6 +1,11 @@
+# File Type
 *.md
+
+# Folders
 .github/*
 discourse/*
 docker/*
 scripts/*
+
+# File
 LICENSE

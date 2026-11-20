@@ -1,5 +1,5 @@
 x-ros2-base: &ros2-base
-  image: ros2_rust_base:jazzy
+  image: ${ROS2_IMAGE:-ros2_rust_base:jazzy}
   build:
     context: ..
     dockerfile: docker/Dockerfile.base
